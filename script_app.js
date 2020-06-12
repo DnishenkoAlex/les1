@@ -107,10 +107,10 @@ const person = {
     isProgrammer: true,
     greet() { //функция внутри обьекта - метод
 console.log('greet from person')
-    },
-    info() {
-        console.log('Информация про человека по имени:', this.name)//вместо this может быть написано person
-    }
+},
+info() {
+    console.log('Информация про человека по имени:', this.name)//вместо this может быть написано person
+}
 }
 person.info()
 
