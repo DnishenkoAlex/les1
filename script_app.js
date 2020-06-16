@@ -1,116 +1,44 @@
-// /////  Обьекты
-// //  обьект сзодается с помощью {} фигурных скобок
-// // внутри {} перечисляются пары - ключ: значение
-// //после пары (ключ: значение) ставится (,) запятая
-// // можно задавать любые типы данных
-// //Нельзя прсто использовать пробел в названии ключей
-// //'complex key' - использовать кавычки дял написания сложных кобчей с пробелом
-// const person = {
-//     name: 'Alex',
-//     age: 40,
-//     leng: ['en', 'ru', 'ua'],
-//     isProgrammer: true,
-//     'complex key': 'complex value',//пример сложный ключ
-//     ['key_' + (1 + 3)]: 'computed key',//пример сложный ключ
-//     //greet: function{}  - такой синтаксис использовался раньше
-//      //greet{} - такой синтаксис используется сейчас
-//     greet() { //функция внутри обьекта - метод
-// console.log('greet from person')
-//     }
-// }
-// console.log(person)
-// console.log(person.name)
-// console.log(person['age'])
-// console.log(person['complex key'])
-// console.log(person['key_4'])
-// person.greet()
-
-// person.age++ //можноработать как и с числми
-// person.leng.push('by') // добавление данных в массив
-
-// person['key_4'] = undefined // удаление значения
-// delete person['key_4'] //полное удаление пары (ключ/значение)
-
-// console.log(person)
-// console.log(person['key_4'])
+// window.alert(1)
+// window.confirm('')
+// window.prompt('')
 
 
-// ///// деструктуризация кода
-// //так было раньше
-// const name = person.name
-// const lang = person.lang
-// const age = person.age
 
-// //так сейчас (новый синтаксис)
-// const {name, lang, age} = person 
-// //создается новая переменная с тем же именем {name, lang, age} из обьекта person 
-
-// const {name: firstName = 'Иванушка', lang, age} = person 
-// //можно поменять имя новой переменной по принципу (ключ: значение), где ключ - name, из обьекта person, а значение - новое название переменной 
-// // можно поставить значение по умолчанию. 'Иванушка' будет подставляться при undefined значения name
+//document  - DOM верево 
+// const heading = document.getElementById('Hello')
+// console.log(heading)
+// console.dir(heading)
 
 
-///////////////
-// const person = {
-//     name: 'Alex',
-//     age: 40,
-//     leng: ['en', 'ru', 'ua'],
-//     isProgrammer: true,
-//     greet() { //функция внутри обьекта - метод
-// console.log('greet from person')
-//     }
+
+// setTimeout(() => {
+//     addStylesTo(heading)
+// }, 1500);
+
+// function addStylesTo(node) {
+//     node.textContent = 'Рим тевирп'
+//     node.style.color = 'red'
+//     node.style.textAlign = 'center'
+//     node.style.background = 'green'
 // }
 
+// const heading2 = document.getElementsByTagName('h2')[0]
+// console.log(heading2)
 
-//цикл for in бежит не только по ключам обьекта но и может заходить в его прототип
-//нужно делат проверку 
-// for(let key in person) {
-//     if(person.hasOwnProperty(key)) { //если у person есть свое свойство которое не находится в прототипе (key), тогда запускаются consol.log
-//         console.log('key: ', key)
-//         console.log('value: ', person[key])
-//     }
-// }
+// const heading3 = document.getElementsByClassName('h3_class')
+// console.log(heading3)
 
-//////////////
 
-// const person = {
-//     name: 'Alex',
-//     age: 40,
-//     leng: ['en', 'ru', 'ua'],
-//     isProgrammer: true,
-//     greet() { //функция внутри обьекта - метод
-// console.log('greet from person')
-//     }
-// }
-// //глобальный обьект Object и метод keys
-// //  при использовании глобального обьекта Object.keys не нужно делать проверку тк он не бежит по прототипу
-// const keys = Object.keys(person)
-// keys.forEach((key) => {
-//     console.log('key: ', key)
-//     console.log('value: ', person[key])
-// })
-// ////
-// //можно не создавать отдельную переменную так как Object.keys возвращает массив и сразу у него можно вызвать метод forEach
-// Object.keys(person).forEach((key) => {
-//     console.log('key: ', key)
-//     console.log('value: ', person[key])
-// })
+//querySelector возвращяет всегда один элемент первый попавшийся
 
-//////////////////////
+// const heading4 = document.querySelector('h4')
+// const heading4 = document.querySelector('.h4_class')
+// const heading4 = document.querySelector('#h4_id')
+// console.log(heading4)
 
-// Контекст
-// this - имеется ввиду в данном случае обьект person
-const person = {
-    name: 'Alex',
-    age: 40,
-    leng: ['en', 'ru', 'ua'],
-    isProgrammer: true,
-    greet() { //функция внутри обьекта - метод
-console.log('greet from person')
-},
-info() {
-    console.log('Информация про человека по имени:', this.name)//вместо this может быть написано person
-}
-}
-person.info()
 
+// как обратиться к элементу если нету идентификатора
+
+const heading5 = document.querySelector('h5')
+console.log(heading5)
+const heading5 = .h5_class.nextElementSibling
